@@ -1,0 +1,12 @@
+# Logs
+/log/*
+!/log/.keep
+
+# Temporary files
+/tmp
+!/tmp/.keep
+
+# Ignore assets built by esbuild
+/app/assets/builds/*
+!/app/assets/builds/.keep
+

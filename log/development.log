@@ -1388,3 +1388,118 @@ Migrating to RenameRegistrationToReservation (20250905175802)
   [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
   [1m[36mInvoice Load (25.5ms)[0m  [1m[34mSELECT "invoices".* FROM "invoices" /* loading for pp */ LIMIT 11 /*application='Lab03V2JuanCabelloVargas'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE DATABASE "lab_03_v2_juan_cabello_vargas_development" ENCODING = 'unicode' /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (23.3ms)[0m  [1m[35mCREATE DATABASE "lab_03_v2_juan_cabello_vargas_test" ENCODING = 'unicode' /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (52.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "lab_03_v2_juan_cabello_vargas_development" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[35mSET search_path TO public /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (34.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "lab_03_v2_juan_cabello_vargas_test" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (42.3ms)[0m  [1m[35mCREATE DATABASE "lab_03_v2_juan_cabello_vargas_development" ENCODING = 'unicode' /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (34.1ms)[0m  [1m[35mCREATE DATABASE "lab_03_v2_juan_cabello_vargas_test" ENCODING = 'unicode' /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35mSQL (7.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "guests" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "guests" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "phone" character varying NOT NULL, "document_id" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "invoices" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "invoices" ("id" bigserial primary key, "reservation_id" integer NOT NULL, "nights_subtotal" integer NOT NULL, "services_subtotal" integer, "tax" integer NOT NULL, "total" integer NOT NULL, "issued_at" timestamp(6) NOT NULL, "status" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "code" character varying NOT NULL, "guest_id" integer NOT NULL, "room_id" integer NOT NULL, "check_in" date NOT NULL, "check_out" date NOT NULL, "status" integer NOT NULL, "adults" integer NOT NULL, "children" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "number" character varying NOT NULL, "room_type" integer NOT NULL, "price" integer NOT NULL, "status" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "service_usages" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "service_usages" ("id" bigserial primary key, "reservation_id" integer NOT NULL, "service_id" integer NOT NULL, "quantity" integer NOT NULL, "used_at" timestamp(6) NOT NULL, "note" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "services" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "services" ("id" bigserial primary key, "name" character varying NOT NULL, "price" integer NOT NULL, "is_active" boolean NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250905172800) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250905171952),
+(20250905170817),
+(20250905165941),
+(20250904214231),
+(20250904212511); /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-09-11 16:10:06.064107', '2025-09-11 16:10:06.064109') RETURNING "key" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '8bd4548db056584c2f465d6f79344eaa19b265d7', '2025-09-11 16:10:06.068997', '2025-09-11 16:10:06.068998') RETURNING "key" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35mSQL (12.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "guests" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "guests" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "phone" character varying NOT NULL, "document_id" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "invoices" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "invoices" ("id" bigserial primary key, "reservation_id" integer NOT NULL, "nights_subtotal" integer NOT NULL, "services_subtotal" integer, "tax" integer NOT NULL, "total" integer NOT NULL, "issued_at" timestamp(6) NOT NULL, "status" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "code" character varying NOT NULL, "guest_id" integer NOT NULL, "room_id" integer NOT NULL, "check_in" date NOT NULL, "check_out" date NOT NULL, "status" integer NOT NULL, "adults" integer NOT NULL, "children" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "number" character varying NOT NULL, "room_type" integer NOT NULL, "price" integer NOT NULL, "status" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "service_usages" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "service_usages" ("id" bigserial primary key, "reservation_id" integer NOT NULL, "service_id" integer NOT NULL, "quantity" integer NOT NULL, "used_at" timestamp(6) NOT NULL, "note" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "services" CASCADE /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "services" ("id" bigserial primary key, "name" character varying NOT NULL, "price" integer NOT NULL, "is_active" boolean NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250905172800) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250905171952),
+(20250905170817),
+(20250905165941),
+(20250904214231),
+(20250904212511); /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-09-11 16:10:06.120497', '2025-09-11 16:10:06.120498') RETURNING "key" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-09-11 16:10:06.122491' WHERE "ar_internal_metadata"."key" = 'environment' /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '8bd4548db056584c2f465d6f79344eaa19b265d7', '2025-09-11 16:10:06.124202', '2025-09-11 16:10:06.124203') RETURNING "key" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mGuest Create (1.9ms)[0m  [1m[32mINSERT INTO "guests" ("first_name", "last_name", "email", "phone", "document_id", "created_at", "updated_at") VALUES ('Andres', 'Howard', 'aihoward@miuandes.cl', '900001111', '99999999k', '2025-09-11 16:10:06.179582', '2025-09-11 16:10:06.179582') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mGuest Create (1.0ms)[0m  [1m[32mINSERT INTO "guests" ("first_name", "last_name", "email", "phone", "document_id", "created_at", "updated_at") VALUES ('Elvis', 'Tec', 'test@test.com', '912345678', '141414142', '2025-09-11 16:10:06.195854', '2025-09-11 16:10:06.195854') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mRoom Create (1.5ms)[0m  [1m[32mINSERT INTO "rooms" ("number", "room_type", "price", "status", "created_at", "updated_at") VALUES ('101', 1, 1000, 1, '2025-09-11 16:10:06.217276', '2025-09-11 16:10:06.217276') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mRoom Create (1.1ms)[0m  [1m[32mINSERT INTO "rooms" ("number", "room_type", "price", "status", "created_at", "updated_at") VALUES ('201', 2, 2000, 2, '2025-09-11 16:10:06.223927', '2025-09-11 16:10:06.223927') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mRoom Create (0.9ms)[0m  [1m[32mINSERT INTO "rooms" ("number", "room_type", "price", "status", "created_at", "updated_at") VALUES ('301', 3, 3000, 3, '2025-09-11 16:10:06.232039', '2025-09-11 16:10:06.232039') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mService Create (1.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "price", "is_active", "created_at", "updated_at") VALUES ('Laundry', 20, TRUE, '2025-09-11 16:10:06.246801', '2025-09-11 16:10:06.246801') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mService Create (1.0ms)[0m  [1m[32mINSERT INTO "services" ("name", "price", "is_active", "created_at", "updated_at") VALUES ('Spa', 15, FALSE, '2025-09-11 16:10:06.269961', '2025-09-11 16:10:06.269961') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mReservation Create (1.0ms)[0m  [1m[32mINSERT INTO "reservations" ("code", "guest_id", "room_id", "check_in", "check_out", "status", "adults", "children", "created_at", "updated_at") VALUES ('code1', 1, 1, '2025-09-01', '2025-09-15', 1, 1, 2, '2025-09-11 16:10:06.287810', '2025-09-11 16:10:06.287810') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mReservation Create (0.8ms)[0m  [1m[32mINSERT INTO "reservations" ("code", "guest_id", "room_id", "check_in", "check_out", "status", "adults", "children", "created_at", "updated_at") VALUES ('code2', 2, 3, '1995-12-21', '2025-12-31', 1, 1, NULL, '2025-09-11 16:10:06.294624', '2025-09-11 16:10:06.294624') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mServiceUsage Create (1.4ms)[0m  [1m[32mINSERT INTO "service_usages" ("reservation_id", "service_id", "quantity", "used_at", "note", "created_at", "updated_at") VALUES (1, 1, 2, '2025-09-10 10:00:00', '2 Shirts and 4 pants', '2025-09-11 16:10:06.310186', '2025-09-11 16:10:06.310186') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mServiceUsage Create (1.0ms)[0m  [1m[32mINSERT INTO "service_usages" ("reservation_id", "service_id", "quantity", "used_at", "note", "created_at", "updated_at") VALUES (2, 2, 1, '2004-10-12 05:00:00', '1 hour session', '2025-09-11 16:10:06.319406', '2025-09-11 16:10:06.319406') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mInvoice Create (1.2ms)[0m  [1m[32mINSERT INTO "invoices" ("reservation_id", "nights_subtotal", "services_subtotal", "tax", "total", "issued_at", "status", "created_at", "updated_at") VALUES (1, 15000, 40, 2857, 17897, '2025-09-15 05:15:00', '1', '2025-09-11 16:10:06.332548', '2025-09-11 16:10:06.332548') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mInvoice Create (1.5ms)[0m  [1m[32mINSERT INTO "invoices" ("reservation_id", "nights_subtotal", "services_subtotal", "tax", "total", "issued_at", "status", "created_at", "updated_at") VALUES (2, 32904000, 15, 6251762, 39155777, '2025-12-31 12:00:00', '1', '2025-09-11 16:10:06.337383', '2025-09-11 16:10:06.337383') RETURNING "id" /*application='Lab03V2JuanCabelloVargas'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='Lab03V2JuanCabelloVargas'*/[0m
