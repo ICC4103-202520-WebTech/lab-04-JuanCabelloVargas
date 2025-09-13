@@ -2,6 +2,6 @@
 
 <ul>
   <% @services.each do |service| %>
-    <li>%<%= link_to(service.name, service_path(service.id)) %></li>
+    <li><%= link_to(service.name, service_path(service.id)) %></li>
   <% end %>
 </ul>
