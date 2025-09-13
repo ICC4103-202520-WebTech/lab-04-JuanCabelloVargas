@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get "/guests", to: "guests#index"
   get "/guests/:id", to: "guests#show", as: "guest"
   
-  get "/reservations", to "reservations#index"
-  get "/reservations/:id", to "reservations#show", as: "reservation"
+  get "/reservations", to: "reservations#index"
+  get "/reservations/:id", to: "reservations#show", as: "reservation"
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
