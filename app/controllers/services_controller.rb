@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   def index
-    @services = Service.All
+    @services = Service.all
   end
 
   def show
